@@ -154,9 +154,6 @@ public class ThreadMonitorServlet extends HttpServlet {
             log("JMX error during CSV export", e);
             out.println("Error,JMX data retrieval failed: " + e.getMessage());
             response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
-        } catch (IOException e) {
-            log("I/O error during CSV export", e);
-            throw e;
         } catch (Exception e) {
             log("Unexpected error during CSV export", e);
             out.println("Error,Unexpected error: " + e.getMessage());
@@ -183,9 +180,6 @@ public class ThreadMonitorServlet extends HttpServlet {
             response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
             out.print("{\"status\":\"error\",\"message\":\"JMX data retrieval failed: " +
                      escapeJson(e.getMessage()) + "\"}");
-        } catch (IOException e) {
-            log("I/O error during JSON export", e);
-            throw e;
         } catch (Exception e) {
             log("Unexpected error during JSON export", e);
             response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
@@ -433,9 +427,6 @@ public class ThreadMonitorServlet extends HttpServlet {
             out.println("<li>Application has proper permissions</li>");
             out.println("</ul>");
             out.println("<p>Error details: " + escapeHtml(e.getMessage()) + "</p>");
-        } catch (IOException e) {
-            log("I/O error during display rendering", e);
-            throw e;
         } catch (Exception e) {
             log("Unexpected error rendering display", e);
             out.println("<h2>Error retrieving thread information</h2>");

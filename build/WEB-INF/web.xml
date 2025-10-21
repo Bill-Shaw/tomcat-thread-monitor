@@ -14,6 +14,30 @@
         <param-value>${catalina.home}/logs/thread-monitor</param-value>
         <description>Directory where thread monitoring logs will be stored</description>
     </context-param>
+
+    <context-param>
+        <param-name>warningThreshold</param-name>
+        <param-value>60</param-value>
+        <description>Thread utilization percentage to trigger warning status (0-100)</description>
+    </context-param>
+
+    <context-param>
+        <param-name>criticalThreshold</param-name>
+        <param-value>80</param-value>
+        <description>Thread utilization percentage to trigger critical status (0-100)</description>
+    </context-param>
+
+    <context-param>
+        <param-name>maxLogFileSize</param-name>
+        <param-value>10485760</param-value>
+        <description>Maximum log file size in bytes before rotation (default: 10MB)</description>
+    </context-param>
+
+    <context-param>
+        <param-name>maxLogFiles</param-name>
+        <param-value>10</param-value>
+        <description>Maximum number of rotated log files to keep</description>
+    </context-param>
     
     <!-- Security constraint to optionally restrict access -->
     <!--
