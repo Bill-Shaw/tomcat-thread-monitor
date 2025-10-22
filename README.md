@@ -177,7 +177,7 @@ This format is ideal for integration with monitoring tools like Prometheus, Graf
 
 ## Requirements
 
-- **Java**: 21 or higher
+- **Java**: 8 or higher (war file compiled with JDK21)
 - **Tomcat**: 8.5 or higher
 - **Servlet API**: 3.1 or higher
 - **Build Tool**: Maven 3.6+ (for building from source)
